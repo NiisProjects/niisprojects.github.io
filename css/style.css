@@ -1,0 +1,210 @@
+:root {
+    --background-color: linear-gradient(45deg, #16ffbf, #7bffab);
+    --background-color-hover: linear-gradient(to right, #23a381, #7ccf9b);
+    --black: #000000;
+    --white: #ffffff;
+    --md: 90%;
+}
+
+@import url('../css/font.css');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Montserrat;
+    background: var(--white);
+    height: 90%;
+}
+
+/*-- LOADING ANIMATION --*/
+#preloader {
+  background: var(--white) url('../images/double-ring.svg') no-repeat center;
+  background-size: 30%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+/*-- NAVBAR--*/
+
+nav {
+    background: var(--background-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem
+}
+
+.title a {
+    font-size: 30px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.navbar-container {
+    padding-top: 0.5rem;
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-components {
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.nav-link {
+    color: var(--black);
+    text-decoration: none;
+    transition: ease-in 0.5s;
+}
+
+.nav-link:hover {
+    color: var(--white);
+}
+
+.hamburger {
+    font-size: 30px;
+    display: none;
+}
+
+.exit {
+    font-size: 30px;
+    display: none;
+}
+
+/*--- FOOTER ---*/
+
+footer {
+    background: var(--black);
+    height: fit-content;
+    width: 100%;
+    margin-top: 30rem;
+}
+
+.footer-title {
+    color: var(--white);
+    font-size: 30px;
+    text-align: center;
+}
+
+.footer-links {
+    color: var(--white);
+    font-size: 18px;
+    text-decoration: none;
+    padding-top: 3rem;
+}
+
+.follow-us {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.icons {
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* -- MAIN -- */
+main {
+    text-align: center;
+    font-weight: 900;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome {
+    font-size: 17px;
+}
+
+.links-title, .main-links a{
+    font-size: 17px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.main-links a:hover {
+    text-decoration: underline;
+}
+
+.projects-link-container {
+    padding-top: 1rem;
+}
+
+.more {
+    padding-top: 4rem;
+}
+
+.more-text {
+    font-size: 2rem;
+}
+
+/* -- size for screens lesser than 600px -- */
+@media only screen and (max-width: 1020px) {
+
+    body {
+        height: 40%;
+    }
+
+    /* --- Navbar ---*/
+    .hamburger, .exit {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.5rem;
+        color: var(--black);
+        cursor: pointer;
+    }
+
+    .exit {
+        display: none;
+    }
+
+    .navbar-container {
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        width: 15rem;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+
+    }
+
+    .nav-components {
+        width: 100%;
+        height: 3.5rem;
+        animation: animateNavItems 1s linear fowards;
+    }
+
+    @keyframes animateNavItems {
+        0% {
+            transform: rotateZ(-90deg);
+        }
+
+        100% {
+            transform: rotateZ(0);
+        }
+    }
+
+    .nav-link{
+        background: var(--background-color);
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav-link:hover {
+        background: var(--background-color-hover);
+        color: var(--white);
+    }
+
+    .footer {
+        padding-top: 50rem;
+    }
+}
